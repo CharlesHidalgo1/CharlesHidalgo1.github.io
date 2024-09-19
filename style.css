@@ -1,6 +1,6 @@
 body {
     background: rgb(149, 199, 157);
-    color: rgb(29, 220, 226);
+    color: rgb(0, 205, 212);
     padding: 10px;
     font-family: arial;
 }
@@ -63,7 +63,7 @@ h2, h3 {
 
     /* portfolio styles */
     .content h1 {
-    color: rgb(29, 220, 226);
+    color: rgb(0, 205, 212);
 }
 
 #portfolio {
