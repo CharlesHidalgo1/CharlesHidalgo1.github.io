@@ -58,7 +58,7 @@ $(function () {
     createCollectable("diamond", 200, 375, 0, 0);
     createCollectable("grace", 550, 420, 0, 0);
     createCollectable("kennedi", 575, 300, 0, 0);
-
+    createCollectable("max", 880, 150, 0, 0);
     
     // TODO 3
     // Create cannons
@@ -66,10 +66,10 @@ $(function () {
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
 
-    createCannon("left", 100, 1000);
-    createCannon("right", 100, 1000);
-
-
+    createCannon("right", 550, 2000);
+    createCannon("bottom", 100, 1000);
+    createCannon("top", 630, 1400);
+    createCannon("left", 100, 600);
     
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////
