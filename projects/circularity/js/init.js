@@ -30,7 +30,7 @@ var init = function (window) {
             circle = draw.randomCircleInArea(canvas, true, true, "#999", 2); // creates a circles
             physikz.addRandomVelocity(circle, canvas, 5, 5); // gives the circle a random velocity
             view.addChild(circle); // adds circle as a child to the apps view so that it is visible on the canvas
-            circles.push(circle); // circle will be pushed to the circles array
+            circles.push(circle); // saves the circle to an array by pushing it to the end of the array
             
         }
         
@@ -89,7 +89,7 @@ var init = function (window) {
             physikz.updatePosition(circles[i]);
             game.checkCirclePosition(circles[i]);
 
-           } // i is set to 0 and the for loop is ran until i exceeds the last value of the array. Each consecutive integer is ran, and the random velcoity and checks to make sure the circles do not go off the screen are applied, essentially applying this code to every circle.
+           } // i is set to 0 and the for loop is ran until i exceeds the last value of the array. Each consecutive integer is ran, and the random velocity and position update is applied to the circle that corresponds to that index. 
             
         }
     
@@ -99,6 +99,9 @@ var init = function (window) {
         it to the opposite side of the screen.
         */
         game.checkCirclePosition = function(circle) {
+
+
+            // checks if the circle has gone off screen //
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
@@ -114,12 +117,12 @@ var init = function (window) {
             if (circle.y > canvas.height){
                 circle.y = 0;
 
-            } // if the circle has gone past the BOTTOM of the screen then place it on the TOP
+            } // if the circle has gone past the BOTTOM of the screen then place it at the TOP
 
             if (circle.y < 0){
                 circle.y = canvas.height
 
-            } // if the circle has gone past the TOP of the screen then place it on the BOTTOM
+            } // if the circle has gone past the TOP of the screen then place it at the BOTTOM
             
 
 
