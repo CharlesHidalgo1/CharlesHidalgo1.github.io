@@ -33,9 +33,7 @@ var runLevels = function (window) {
     }
     
 
-    createObstacles(400, groundY - 50, 25, 10);
-    createObstacles(800, groundY - 50, 100, 10);
-    createObstacles(1000, groundY - 50, 25, 30);
+
 
     function createEnemy (x, y, velocity, rotate, health, score){
     var enemy = game.createGameItem("enemy", 25); // creates enemy game item and adds it to the game.
@@ -59,9 +57,6 @@ var runLevels = function (window) {
     }
     }
 
-    createEnemy(400, groundY - 50, -3, 10, -10, 100);
-    createEnemy(800, groundY - 50, -3, 10, -10, 100);
-    createEnemy(2000, groundY - 50, -3, 10, -10, 100);
 
     function createReward (x, y, velocity, rotate, health, score){
       var reward = game.createGameItem("reward", 25); // creates reward game item and adds it to the game.
@@ -81,10 +76,58 @@ var runLevels = function (window) {
       };
      }
 
-     createReward(500, groundY - 100, -3, 10, 10, 50);
+
+
+
+     function createLevel (x, y, velocity){
+      var level = game.createGameItem("level", 25); // creates level game item and adds it to the game.
+      var yellowSquare = draw.rect(50, 50, "yellow"); // creates a yellow square and stores it in the variable yellowSquare.
+      yellowSquare.x = -25; // offsets the image from the hitzone by -25 pixels.
+      yellowSquare.y = -25; // offsets the image from the hitzone by -25 pixels.
+      level.addChild(yellowSquare); // add the yellow square as a child to our level variable.
+      level.x = x; // x pos of level
+      level.y = y; // y pos of level
+      game.addGameItem(level); // add level to the game
+      level.velocityX += velocity; // controlling how fast the level moves on the x axis.
+      level.rotationalVelocity = 10; // sets the rotational velocity of the level.
+      level.onPlayerCollision = function () {
+        level.shrink();
+        startLevel();
+      };
+     }
+
+
 
     function startLevel() {
       // TODO 13 goes below here
+
+      var level = levelData[currentLevel]; // fetches the currentLevel from the levelData array and stores it in var level.
+      var levelObjects = level.gameItems; // retrive the array of gameItems and stores it in levelObjects.
+
+      for (var i = 0; i < levelObjects.length; i++){
+        var element = levelObjects[i];
+
+        if (element.type === "sawblade"){ // checks the type key:value of the gameItems object to determine which object to manifest.
+          createObstacles(element.x, element.y, element.hitSize, element.damage); // will pass the perameters if the condition is true.
+
+        }
+
+        if (element.type === "enemy"){ // checks the type key:value of the gameItems object to determine which object to manifest.
+          createEnemy(element.x, element.y, element.velocity, element.rotate, element.health, element.score); // will pass the perameters if the condition is true.
+
+        }
+        
+        if (element.type === "reward"){ // checks the type key:value of the gameItems object to determine which object to manifest.
+          createReward(element.x, element.y, element.velocity, element.rotate, element.health, element.score); // will pass the perameters if the condition is true.
+
+        }
+
+        if (element.type === "level"){ // checks the type key:value of the gameItems object to determine which object to manifest.
+          createLevel(element.x, element.y, element.velocity); // will pass the perameters if the condition is true.
+
+        }
+
+      }
 
 
 
