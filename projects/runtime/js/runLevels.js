@@ -18,18 +18,20 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-    function createObstacles (x, y, hitSize, damage){
+    function createObstacles (x, y, hitSize, damage, image, rotate){
       var hitZoneSize = hitSize; // defines the size of the hitzone and assigns it to a variable
       var damageFromObstacle = damage; // defines the amount of damage obstacle causes and assigns to a variable
       var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); // creates the obstacle hitzone.
       obstacleHitZone.x = x; // sets the x coordinate of the obstacle
       obstacleHitZone.y = y; // sets the y coordinate of the obstacle
       game.addGameItem(obstacleHitZone); // adds the obstacle hitzone to the game
-      var obstacleImage = draw.bitmap("img/sawblade.png"); // draw tghe image bitmpa and store it in a variable
+      var obstacleImage = draw.bitmap(image); // draw the image bitmpa and store it in a variable
       obstacleHitZone.addChild(obstacleImage); // attaches the image to the sawblade hitzone
       obstacleImage.x = -25; // position the image on the hitzone's x value by moving it left 25 pixels.
       obstacleImage.y = -25; // position the image on the hitzone's y value by moving it up 25 pixels.
-      obstacleHitZone.rotationalVelocity = 10; // rotates the obstacles.
+      obstacleHitZone.rotationalVelocity = rotate; // rotates the obstacles.
+      obstacleImage.scaleX = 1;
+      obstacleImage.scaleY = 1;
     }
     
 
@@ -108,22 +110,27 @@ var runLevels = function (window) {
         var element = levelObjects[i];
 
         if (element.type === "sawblade"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createObstacles(element.x, element.y, element.hitSize, element.damage); // will pass the perameters if the condition is true.
+          createObstacles(element.x, element.y, element.hitSize, element.damage, element.image, element.rotate); //  if the condition is true it will call the relevant function.
+
+        }
+
+        if (element.type === "spikes"){ // checks the type key:value of the gameItems object to determine which object to manifest.
+          createObstacles(element.x, element.y, element.hitSize, element.damage, element.image, element.rotate); //  if the condition is true it will call the relevant function.
 
         }
 
         if (element.type === "enemy"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createEnemy(element.x, element.y, element.velocity, element.rotate, element.health, element.score); // will pass the perameters if the condition is true.
+          createEnemy(element.x, element.y, element.velocity, element.rotate, element.health, element.score); // if the condition is true it will call the relevant function.
 
         }
         
         if (element.type === "reward"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createReward(element.x, element.y, element.velocity, element.rotate, element.health, element.score); // will pass the perameters if the condition is true.
+          createReward(element.x, element.y, element.velocity, element.rotate, element.health, element.score); //  if the condition is true it will call the relevant function.
 
         }
 
         if (element.type === "level"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createLevel(element.x, element.y, element.velocity); // will pass the perameters if the condition is true.
+          createLevel(element.x, element.y, element.velocity); //  if the condition is true it will call the relevant function.
 
         }
 
