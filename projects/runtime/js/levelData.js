@@ -21,13 +21,13 @@ var makeLevelData = function (window) {
 
           { type: "spikes", x: 3000, y: groundY, hitSize: 25, damage: 30, image: "img/spikes.png", rotate: 0 },
 
-          { type: "enemy", x: 400, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
+          { type: "enemy", x: 400, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100, image: "img/pizza.png" },
           { type: "enemy", x: 800, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
           { type: "enemy", x: 2000, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
 
           { type: "reward", x: 500, y: groundY - 100, velocity: -3, rotate: 10, health: 10, score: 50 },
 
-          { type: "level", x: 1500, y: groundY - 50, velocity: -3 },
+          { type: "level", x: 1500, y: groundY - 50, velocity: -3, image: "img/flag.png" },
         ],
       },
       {
