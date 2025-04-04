@@ -15,13 +15,13 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY - 50, hitSize: 25, damage: 10, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
-          { type: "obstacle", x: 800, y: groundY - 50, hitSize: 25, damage: 20, image: "img/spaghetti.png", rotate: 10, xScale: 0.25, yScale: 0.25 },
-          { type: "obstacle", x: 1000, y: groundY - 50, hitSize: 25, damage: 30, image: "img/sawblade.png", rotate: 10 },
+          { type: "obstacle", x: 400, y: groundY - 20, hitSize: 25, damage: 10, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 800, y: groundY - 20, hitSize: 25, damage: 20, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 1000, y: groundY - 20, hitSize: 25, damage: 30, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
 
           { type: "spikes", x: 3000, y: groundY, hitSize: 25, damage: 30, image: "img/spikes.png", rotate: 0 },
 
-          { type: "enemy", x: 400, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100, image: "img/pizza.png" },
+          { type: "enemy", x: 400, y: groundY - 50, velocity: -3, rotate: 10, health: -30, score: 100, image: "img/pizza.png" },
           { type: "enemy", x: 800, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
           { type: "enemy", x: 2000, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
 
