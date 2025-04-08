@@ -15,29 +15,33 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 400, y: groundY - 20, hitSize: 25, damage: 10, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
-          { type: "obstacle", x: 800, y: groundY - 20, hitSize: 25, damage: 20, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
-          { type: "obstacle", x: 1000, y: groundY - 20, hitSize: 25, damage: 30, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 550, y: groundY - 20, hitSize: 20, damage: 10, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 800, y: groundY - 120, hitSize: 25, damage: 20, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 1200, y: groundY - 20, hitSize: 15, damage: 30, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 1500, y: groundY - 20, hitSize: 15, damage: 50, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 2000, y: groundY - 20, hitSize: 20, damage: 10, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 2100, y: groundY - 120, hitSize: 25, damage: 20, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
+          { type: "obstacle", x: 2200, y: groundY - 20, hitSize: 15, damage: 30, image: "img/pizza.png", rotate: 10, xScale: 0.3, yScale: 0.3 },
 
-          { type: "spikes", x: 3000, y: groundY, hitSize: 25, damage: 30, image: "img/spikes.png", rotate: 0 },
+          { type: "enemy", x: 450, y: groundY - 50, velocity: -3, rotate: 0, health: -30, score: 100, image: "img/chef.png" },
+          { type: "enemy", x: 1500, y: groundY - 50, velocity: -3, rotate: 0, health: -10, score: 100, image: "img/chef.png" },
+          { type: "enemy", x: 3300, y: groundY - 50, velocity: -7, rotate: 0, health: -10, score: 100, image: "img/chef.png" },
+          { type: "enemy", x: 20000, y: groundY - 50, velocity: -25, rotate: 0, health: -25, score: 100, image: "img/chef.png" },
 
-          { type: "enemy", x: 400, y: groundY - 50, velocity: -3, rotate: 10, health: -30, score: 100, image: "img/pizza.png" },
-          { type: "enemy", x: 800, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
-          { type: "enemy", x: 2000, y: groundY - 50, velocity: -3, rotate: 10, health: -10, score: 100 },
+          { type: "reward", x: 2000, y: groundY - 150, velocity: -7, rotate: 0, health: 10, score: 50, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 4000, y: groundY - 150, velocity: -10, rotate: 0, health: 10, score: 50, image: "img/rollingpin.png", xScale: 0.3, yScale: 0.3 },
 
-          { type: "reward", x: 500, y: groundY - 100, velocity: -3, rotate: 10, health: 10, score: 50 },
-
-          { type: "level", x: 1500, y: groundY - 50, velocity: -3, image: "img/flag.png" },
+          { type: "level", x: 4000, y: groundY - 50, velocity: -3, image: "img/flag.png" },
         ],
       },
       {
         name: "Robot Rampage",
         number: 2,
-        speed: -3,
+        speed: -10,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY - 50, hitSize: 25, damage: 10, image: "img/sawblade.png" },
-          { type: "sawblade", x: 800, y: groundY - 50, hitSize: 25, damage: 20, image: "img/sawblade.png" },
-          { type: "sawblade", x: 1000, y: groundY - 50, hitSize: 25, damage: 30, image: "img/sawblade.png" },
+          { type: "sawblade", x: 4200, y: groundY - 50, hitSize: 25, damage: 10, image: "img/sawblade.png" },
+          { type: "sawblade", x: 4600, y: groundY - 50, hitSize: 25, damage: 20, image: "img/sawblade.png" },
+          { type: "sawblade", x: 5000, y: groundY - 50, hitSize: 25, damage: 30, image: "img/sawblade.png" },
         ],
       },
     ];

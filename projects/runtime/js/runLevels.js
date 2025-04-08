@@ -41,8 +41,8 @@ var runLevels = function (window) {
     var enemy = game.createGameItem("enemy", 25); // creates enemy game item and adds it to the game.
     var enemyImage = draw.bitmap(image); // draw the image bitmap and store it in a variable
     enemyImage.x = -38; // offsets the image from the hitzone by -25 pixels.
-    enemyImage.y = -20; // offsets the image from the hitzone by -25 pixels.
-    enemy.addChild(enemyImage); // add the red square as a child to our enemy variable.
+    enemyImage.y = -50; // offsets the image from the hitzone by -25 pixels.
+    enemy.addChild(enemyImage); // add the image as a child to our enemy variable.
     enemy.x = x; // x pos of enemy
     enemy.y = y; // y pos of enemy
     game.addGameItem(enemy); // add enemy to the game
@@ -62,17 +62,19 @@ var runLevels = function (window) {
     }
 
 
-    function createReward (x, y, velocity, rotate, health, score){
+    function createReward (x, y, velocity, rotate, health, score, image, xScale, yScale){
       var reward = game.createGameItem("reward", 25); // creates reward game item and adds it to the game.
-      var blueSquare = draw.rect(50, 50, "blue"); // creates a blue square and stores it in the variable blueSquare.
-      blueSquare.x = -25; // offsets the image from the hitzone by -25 pixels.
-      blueSquare.y = -25; // offsets the image from the hitzone by -25 pixels.
-      reward.addChild(blueSquare); // add the blue square as a child to our reward variable.
+      var rewardImage = draw.bitmap(image); // draw the image bitmap and store it in a variable
+      rewardImage.x = -25; // offsets the image from the hitzone by -25 pixels.
+      rewardImage.y = -25; // offsets the image from the hitzone by -25 pixels.
+      reward.addChild(rewardImage); // add the image as a child to our reward variable.
       reward.x = x; // x pos of reward
       reward.y = y; // y pos of reward
       game.addGameItem(reward); // add reward to the game
       reward.velocityX += velocity; // controlling how fast the reward moves on the x axis.
       reward.rotationalVelocity = rotate; // sets the rotational velocity of the reward.
+      rewardImage.scaleX = xScale;
+      rewardImage.scaleY = yScale;
       reward.onPlayerCollision = function () {
         game.increaseScore(score);
         game.changeIntegrity(health); // subtracts 10 health from halleBot's HUD.
@@ -115,18 +117,13 @@ var runLevels = function (window) {
 
         }
 
-        if (element.type === "spikes"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createObstacles(element.x, element.y, element.hitSize, element.damage, element.image, element.rotate); //  if the condition is true it will call the relevant function.
-
-        }
-
         if (element.type === "enemy"){ // checks the type key:value of the gameItems object to determine which object to manifest.
           createEnemy(element.x, element.y, element.velocity, element.rotate, element.health, element.score, element.image); // if the condition is true it will call the relevant function.
 
         }
         
         if (element.type === "reward"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createReward(element.x, element.y, element.velocity, element.rotate, element.health, element.score); //  if the condition is true it will call the relevant function.
+          createReward(element.x, element.y, element.velocity, element.rotate, element.health, element.score, element.image, element.xScale, element.yScale); //  if the condition is true it will call the relevant function.
 
         }
 
