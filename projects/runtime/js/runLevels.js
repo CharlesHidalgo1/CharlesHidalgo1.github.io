@@ -3,7 +3,7 @@ var runLevels = function (window) {
 
   var draw = window.opspark.draw;
   var createjs = window.createjs;
-  let currentLevel = 0;
+  let currentLevel = 1;
 
   window.opspark.runLevelInGame = function (game) {
     // some useful constants
@@ -18,7 +18,7 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-    function createObstacles (x, y, hitSize, damage, image, rotate, xScale, yScale){
+    function createObstacles (x, y, hitSize, damage, image, rotate, xScale, yScale, xImage, yImage){
       var hitZoneSize = hitSize; // defines the size of the hitzone and assigns it to a variable
       var damageFromObstacle = damage; // defines the amount of damage obstacle causes and assigns to a variable
       var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); // creates the obstacle hitzone.
@@ -27,8 +27,8 @@ var runLevels = function (window) {
       game.addGameItem(obstacleHitZone); // adds the obstacle hitzone to the game
       var obstacleImage = draw.bitmap(image); // draw the image bitmap and store it in a variable
       obstacleHitZone.addChild(obstacleImage); // attaches the image to the obstacle hitzone
-      obstacleImage.x = -38; // position the image on the hitzone's x value by moving it left 25 pixels.
-      obstacleImage.y = -20; // position the image on the hitzone's y value by moving it up 25 pixels.
+      obstacleImage.x = xImage; // position the image on the hitzone's x value by moving it left by a certain amount of pixels.
+      obstacleImage.y = yImage; // position the image on the hitzone's y value by moving it up by a certain amount of pixels.
       obstacleHitZone.rotationalVelocity = rotate; // rotates the obstacles.
       obstacleImage.scaleX = xScale;
       obstacleImage.scaleY = yScale;
@@ -113,7 +113,7 @@ var runLevels = function (window) {
         var element = levelObjects[i];
 
         if (element.type === "obstacle"){ // checks the type key:value of the gameItems object to determine which object to manifest.
-          createObstacles(element.x, element.y, element.hitSize, element.damage, element.image, element.rotate, element.xScale, element.yScale); //  if the condition is true it will call the relevant function.
+          createObstacles(element.x, element.y, element.hitSize, element.damage, element.image, element.rotate, element.xScale, element.yScale, element.xImage, element.yImage); //  if the condition is true it will call the relevant function.
 
         }
 
