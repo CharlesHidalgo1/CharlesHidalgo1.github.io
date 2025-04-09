@@ -3,7 +3,7 @@ var runLevels = function (window) {
 
   var draw = window.opspark.draw;
   var createjs = window.createjs;
-  let currentLevel = 1;
+  let currentLevel = 2;
 
   window.opspark.runLevelInGame = function (game) {
     // some useful constants
