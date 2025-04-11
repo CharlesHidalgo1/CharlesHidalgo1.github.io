@@ -54,10 +54,17 @@ var background = function (window) {
             
             var moon = draw.bitmap("img/moon.png"); // creates a bitmap object using the moon image and stores it in the moon variable.
             moon.x = canvas.width - 400; // sets the moon's x position 
-            moon.y = canvas.height - 900; // sets the moon's y position
+            moon.y = canvas.height - 600; // sets the moon's y position
             moon.scaleX = 0.5; // scales the moon's width
             moon.scaleY = 0.5; // scales the moon's height
             background.addChild(moon); // add the moon to the background container
+
+            var mustache = draw.bitmap("img/mustache.png"); // creates a bitmap object using the mustache image and stores it in the mustache variable.
+            mustache.x = canvas.width - 445; // sets the mustache's x position 
+            mustache.y = canvas.height - 620; // sets the mustache's y position
+            mustache.scaleX = 2,0; // scales the mustache's width
+            mustache.scaleY = 2.0; // scales the mustache's height
+            background.addChild(mustache); // add the mustache to the background container
 
 
 

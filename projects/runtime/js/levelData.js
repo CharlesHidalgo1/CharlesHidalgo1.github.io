@@ -26,10 +26,10 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 450, y: groundY - 50, velocity: -3, rotate: 0, health: -30, score: 143, image: "img/chef.png" },
           { type: "enemy", x: 1500, y: groundY - 50, velocity: -3, rotate: 0, health: -10, score: 143, image: "img/chef.png" },
           { type: "enemy", x: 3300, y: groundY - 50, velocity: -7, rotate: 0, health: -10, score: 143, image: "img/chef.png" },
-          { type: "enemy", x: 20000, y: groundY - 50, velocity: -25, rotate: 0, health: -25, score: 143, image: "img/chef.png" },
+          { type: "enemy", x: 20000, y: groundY - 50, velocity: -25, rotate: 0, health: -100, score: 143, image: "img/chef.png" },
 
-          { type: "reward", x: 2000, y: groundY - 150, velocity: -7, rotate: 0, health: 10, score: 50, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
-          { type: "reward", x: 4000, y: groundY - 150, velocity: -10, rotate: 0, health: 10, score: 50, image: "img/rollingpin.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 2000, y: groundY - 150, velocity: -7, rotate: 0, health: 10, score: 1800, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 4000, y: groundY - 150, velocity: -10, rotate: 0, health: 10, score: 1800, image: "img/rollingpin.png", xScale: 0.3, yScale: 0.3 },
 
           { type: "level", x: 5500, y: groundY - 50, velocity: -3, image: "img/flag.png" },
         ],
@@ -50,9 +50,9 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 18300, y: groundY - 50, velocity: -20, rotate: 0, health: -30, score: 143, image: "img/chef.png" },
           { type: "enemy", x: 21300, y: groundY - 50, velocity: -20, rotate: 0, health: -30, score: 143, image: "img/chef.png" },
 
-          { type: "reward", x: 20300, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 50, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
-          { type: "reward", x: 22500, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 50, image: "img/rollingpin.png", xScale: 0.3, yScale: 0.3 },
-          { type: "reward", x: 23500, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 50, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 20300, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 1800, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 22500, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 1800, image: "img/rollingpin.png", xScale: 0.3, yScale: 0.3 },
+          { type: "reward", x: 23500, y: groundY - 150, velocity: -20, rotate: 0, health: 10, score: 1800, image: "img/mammamia.png", xScale: 0.3, yScale: 0.3 },
 
           { type: "level", x: 5000, y: groundY - 50, velocity: -3, image: "img/flag.png" },
         ],
