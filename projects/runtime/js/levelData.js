@@ -39,12 +39,12 @@ var makeLevelData = function (window) {
         number: 2,
         speed: -3,
         gameItems: [
-          { type: "obstacle", x: 550, y: groundY - 20, hitSize: 20, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
-          { type: "obstacle", x: 700, y: groundY - 120, hitSize: 25, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
-          { type: "obstacle", x: 1235, y: groundY - 20, hitSize: 15, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
-          { type: "obstacle", x: 1435, y: groundY - 20, hitSize: 15, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
-          { type: "obstacle", x: 1635, y: groundY - 20, hitSize: 15, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
-          { type: "obstacle", x: 1835, y: groundY - 20, hitSize: 15, damage: 100, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 550, y: groundY - 20, hitSize: 20, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 700, y: groundY - 120, hitSize: 25, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 1235, y: groundY - 20, hitSize: 15, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 1435, y: groundY - 20, hitSize: 15, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 1635, y: groundY - 20, hitSize: 15, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
+          { type: "obstacle", x: 1835, y: groundY - 20, hitSize: 15, damage: 40, image: "img/spaghetti.png", rotate: 10, xScale: 0.2, yScale: 0.2, xImage: -20, yImage: -20 },
 
           { type: "enemy", x: 6700, y: groundY - 50, velocity: -20, rotate: 0, health: -30, score: 143, image: "img/chef.png" },
           { type: "enemy", x: 18300, y: groundY - 50, velocity: -20, rotate: 0, health: -30, score: 143, image: "img/chef.png" },
@@ -63,7 +63,7 @@ var makeLevelData = function (window) {
         speed: -3,
         gameItems: [
           
-          { type: "obstacle", x: 550, y: groundY - 20, hitSize: 0, damage: 0, image: "img/youwin.png", rotate: 0, xScale: 2.0, yScale: 2.0, xImage: -44, yImage: 40 },
+          { type: "obstacle", x: 550, y: groundY - 550, hitSize: 0, damage: 0, image: "img/youwin.png", rotate: 0, xScale: 2.0, yScale: 2.0, xImage: -44, yImage: 40 },
           
         ],
       },

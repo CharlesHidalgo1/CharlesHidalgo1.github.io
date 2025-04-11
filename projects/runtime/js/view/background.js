@@ -40,28 +40,34 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'blue'); // Draws a background as a rectangle and stores it in the variable backgroundFill
-            background.addChild(backgroundFill); // Adding the backgroundFill varibale to the background container
+            var backgroundspaghetti = draw.bitmap("img/backgroundspaghetti.png");
+            background.addChild(backgroundspaghetti); // Adding the backgroundFill varibale to the background container
+            backgroundspaghetti.x = 0;
+            backgroundspaghetti.y = 0;
+            backgroundspaghetti.scaleX = 30;
+            backgroundspaghetti.scaleY = 15;
             
-            // TODO 2: - Add a moon and starfield
+            // TODO 2: - Add a meatball and a feild of Italian flags.
 
             for (var i = 0; i < 100; i++){
-                var circle = draw.circle(3, "white", "yellow", 2); // create a circle with a specified radius, border color, fill color, alpha and store it in the variable circle.
-                circle.x = canvasWidth * Math.random(); // set random x pos within canvas width.
-                circle.y = groundY * Math.random(); // set random y pos within groundY range.
-                background.addChild(circle); // adds the star to the background container.
+                var italianflag = draw.bitmap("img/italianflag.png"); // creates a bitmap object using the italianflag image and stores it in the italianflag variable.
+                italianflag.x = canvasWidth * Math.random(); // set random x pos within canvas width.
+                italianflag.y = groundY * Math.random(); // set random y pos within groundY range.
+                italianflag.scaleX = 0.05;
+                italianflag.scaleY = 0.05;
+                background.addChild(italianflag); // adds the star to the background container.
             }
             
-            var moon = draw.bitmap("img/moon.png"); // creates a bitmap object using the moon image and stores it in the moon variable.
-            moon.x = canvas.width - 400; // sets the moon's x position 
-            moon.y = canvas.height - 600; // sets the moon's y position
-            moon.scaleX = 0.5; // scales the moon's width
-            moon.scaleY = 0.5; // scales the moon's height
-            background.addChild(moon); // add the moon to the background container
+            var meatball = draw.bitmap("img/meatball.png"); // creates a bitmap object using the meatball image and stores it in the meatball variable.
+            meatball.x = canvas.width - 430; // sets the meatball's x position 
+            meatball.y = canvas.height - 920; // sets the meatball's y position
+            meatball.scaleX = 1.2; // scales the meatball's width
+            meatball.scaleY = 1.2; // scales the meatball's height
+            background.addChild(meatball); // add the meatball to the background container
 
             var mustache = draw.bitmap("img/mustache.png"); // creates a bitmap object using the mustache image and stores it in the mustache variable.
             mustache.x = canvas.width - 445; // sets the mustache's x position 
-            mustache.y = canvas.height - 620; // sets the mustache's y position
+            mustache.y = canvas.height - 920; // sets the mustache's y position
             mustache.scaleX = 2,0; // scales the mustache's width
             mustache.scaleY = 2.0; // scales the mustache's height
             background.addChild(mustache); // add the mustache to the background container
@@ -74,7 +80,7 @@ var background = function (window) {
             for (var i = 0; i < 5; i++) {
                 var buildingHeight = 300 * Math.random(); // assign 300 to the buildingHeight variable
                 var buildingColors = ["red", "white", "green", "red", "white"];
-                var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1); // draws rect with 75  width, buildingHeight is the height, lightgrey is the fill color, black is the outline, and 1 is the outline width.
+                var building = draw.rect(75, buildingHeight, buildingColors[i], "Transparent", 1); // draws rect with 75  width, buildingHeight is the height, the fill color depends on the buildingColors array, transparent is the outline, and 1 is the outline width.
                 building.x = 200 * i; // multiply 200 by the current i value and store it as the x pos for the building.
                 building.y = groundY - buildingHeight; // takes the groundY, subtracts the buildingHeight, and stores that as the y value.
                 background.addChild(building); // add our building to the background container
